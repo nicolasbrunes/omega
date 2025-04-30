@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solicite agora um orçamento gratuito de alarme residencial e proteja sua casa com a líder em segurança.">
+  <title>Alarme Residencial - Proteja sua Casa | Segurança 24h</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Estilos Base */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #FFFAFA;
+      color: #333;
+      transition: margin-left 0.3s;
+    }
+
+    /* Menu Lateral */
+    .menu {
+      height: 100%;
+      width: 0; /* Menu fechado */
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #FFFAFA; /* Cor de fundo igual ao site */
+      color: #333;
+      overflow-x: hidden;
+      transition: width 0.3s;
+      padding-top: 60px;
+      z-index: 1000;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .menu a {
+      padding: 15px;
+      text-decoration: none;
+      font-size: 1rem;
+      color: #333;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    .menu a:hover {
+      background-color: #575757;
+      color: #fff;
+    }
+
+    /* Menu Expandido */
+    .menu.open {
+      width: 150px; /* Menu expandido */
+    }
+
+    /* Ícone do Menu */
+    .menu-icon {
+      font-size: 20px; /* Reduzindo o tamanho do ícone */
+      color: #333;
+      background-color: #fff;
+      padding: 6px; /* Diminui o padding para ícone menor */
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1100;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-icon:hover {
+      background-color: #B22222;
+      color: #fff;
+    }
+
+    .menu-icon span {
+      margin-left: 5px;
+      font-size: 1rem;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      body {
+        padding-left: 0;
+      }
+
+      .menu {
+        width: 0;
+      }
+
+      .menu.open {
+        width: 150px;
+      }
+
+      .menu-icon {
+        font-size: 18px;
+        padding: 4px;
+        top: 15px;
+        left: 10px;
+      }
+
+      .menu-icon span {
+        display: none;
+      }
+
+      .menu a {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Outras partes do site */
+    header {
+      background-color: #B22222;
+      color: #FFFAFA;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header h1 img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background: #fff;
+    }
+
+    .hero img {
+      max-width: 400px;
+      width: 100%;
+      border-radius: 10px;
+      margin: 1rem;
+    }
+
+    .hero-text {
+      max-width: 500px;
+      padding: 1rem;
+    }
+
+    .hero-text h1 {
+      color: #B22222;
+      font-size: 2rem;
+    }
+
+    .hero-text p {
+      margin: 1rem 0;
+      font-size: 1rem;
+    }
+
+    .hero-text ul {
+      padding-left: 1.2rem;
+    }
+
+    .hero-text li {
+      margin-bottom: 0.5rem;
+    }
+
+    .form-container {
+      background: #B22222;
+      color: #FFFAFA;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .form-container h2 {
+      margin-bottom: 1rem;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1rem;
+    }
+
+    input,
+    select,
+    button {
+      padding: 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    button {
+      background-color: #801A46;
+      color: #FFFAFA;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #6A153A;
+    }
+
+    footer {
+      background: #333;
+      color: #FFFAFA;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.875rem;
+    }
+
+    .products {
+      padding: 2rem 1rem;
+    }
+
+    .products h2 {
+      text-align: center;
+      color: #B22222;
+      margin-bottom: 2rem;
+    }
+
+    .products-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem;
+      max-width: 250px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    /* Ícones de Redes Sociais no lado direito */
+    .social-icons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      font-size: 25px;
+      border-radius: 50%;
+      padding: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Balão de WhatsApp */
+    .social-icons .whatsapp {
+      background-color: #25D366; /* Cor característica do WhatsApp */
+    }
+
+    .social-icons .whatsapp:hover {
+      background-color: #128C7E;
+    }
+
+    /* Balão de Instagram */
+    .social-icons .instagram {
+      background-color: #E1306C; /* Cor característica do Instagram */
+    }
+
+    .social-icons .instagram:hover {
+      background-color: #C13584;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Ícone de Menu (Hamburguer) -->
+  <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+    <span>Menu</span>
+  </div>
+<!--Menu lateral-->
+  <div class="menu" id="menu">
+    <a href="#">Home</a>
+    <a href="produtos.html">Produtos</a> <!-- Atualizado -->
+    <a href="#">Sobre nós</a>
+    <a href="#">Contato</a>
+  </div>
+  
+
+  <!-- Redes Sociais -->
+  <div class="social-icons">
+    <a href="https://wa.me/1234567890" target="_blank" title="WhatsApp" class="whatsapp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.instagram.com/yourusername" target="_blank" title="Instagram" class="instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+
+  <!-- Conteúdo -->
+  <header>
+    <h1>
+      <img src="https://i.ibb.co/vx9223DG/e3cef7f2-4b0e-4ed2-8d35-1da16774bb4f.png" alt="Logo" width="500" height="150">
+    </h1>
+    <p>Proteja o que realmente importa</p>
+  </header>
+
+  <section class="hero">
+    <img src="https://i.ibb.co/NgWDdS5k/depositphotos-279235728-stock-photo-white-paper-texture-background-close-1.png" alt="Marcas que trabalhamos">
+    <div class="hero-text">
+      <h1>Instalação de câmeras, centrais de alarmes e controles de acessos</h1>
+      <p>Tenha mais tranquilidade e segurança com nossos serviços e produtos.</p>
+      <ul>
+        <li>Instalação rápida e com garantia.</li>
+        <li>Produtos de qualidade e excelência no trabalho.</li>
+        <li>Atendimento emergencial.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>Nossos Produtos</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="https://i.ibb.co/xv7RM85/4b181328-1b5a-418e-bdab-3ee37189258c.png" alt="Câmeras de Segurança">
+        <h3>Câmeras de Segurança</h3>
+        <p>Câmeras de alta resolução para monitoramento interno e externo.</p>
+      </div>
+      <div class="product-card">
+        <img src="https://www.megams.com.br/impimages/4870.jpg" alt="Alarmes">
+        <h3>Alarmes</h3>
+        <p>Alarmes modernos com monitoramento 24 horas e resposta rápida.</p>
+      </div>
+      <div class="product-card">
+        <img src="https://pontecfranca.com.br/wp-content/uploads/2018/04/idfit-Branco-e-Preto.png" alt="Controle de Acesso">
+        <h3>Controle de Acesso</h3>
+        <p>Soluções completas para portões, catracas, fechaduras e biometria.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-container">
+    <h2>Solicite um Orçamento Gratuito</h2>
+    <form>
+      <input type="text" placeholder="Nome completo" required>
+      <input type="tel" placeholder="Telefone" required>
+      <input type="email" placeholder="E-mail" required>
+      <select required>
+        <option value="">Tipo de imóvel</option>
+        <option value="residencial">Residencial</option>
+        <option value="comercial">Comercial</option>
+      </select>
+      <button type="submit">Solicitar Orçamento</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Empresa de Segurança. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById('menu');
+      menu.classList.toggle('open');
+    }
+  </script>
+
+</body>
+
+</html>
