@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nós | Omega Alarmes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #FFFAFA;
+      color: #333;
+    }
+
+    header {
+      background-color: #B22222;
+      color: #FFFAFA;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .menu-icon {
+      font-size: 22px;
+      background-color: #fff;
+      color: #B22222;
+      border-radius: 5px;
+      padding: 8px 12px;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1101;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .side-menu {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: hsl(0, 0%, 100%);
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 1100;
+    }
+
+    .side-menu a {
+      display: block;
+      color: #000000;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .side-menu a:hover {
+      background-color: #B22222;
+      color: #fff;
+    }
+
+    .about {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .about h2 {
+      text-align: center;
+      color: #B22222;
+      margin-bottom: 1.5rem;
+    }
+
+    .about p {
+      font-size: 1rem;
+      line-height: 1.7;
+      text-align: justify;
+      margin-bottom: 1rem;
+    }
+
+    .about img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 1.5rem auto;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #333;
+      color: #FFFAFA;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="side-menu" id="sideMenu">
+    <a href="index.html">Início</a>
+    <a href="produtos.html">Produtos</a>
+    <a href="sobre.html">Sobre nós</a>
+    <a href="servicos.html">Serviços</a>
+  </div>
+
+  <header>
+    <h1><img src="https://i.ibb.co/vx9223DG/e3cef7f2-4b0e-4ed2-8d35-1da16774bb4f.png" alt="Omega Alarmes" height="150" width="500"></h1>
+  </header>
+
+  <section class="about">
+    <h2>Nossa História</h2>
+    <p>A Omega Alarmes nasceu com a missão de proporcionar segurança e tranquilidade para famílias, empresas e instituições. Desde a nossa fundação, temos atuado com seriedade e profissionalismo, oferecendo soluções tecnológicas de alta qualidade em segurança eletrônica.</p>
+    
+    <p>Com mais de 10 anos de experiência no mercado, investimos constantemente em capacitação, inovação e parcerias com marcas líderes do setor. Nossa equipe é formada por profissionais qualificados, comprometidos em oferecer um atendimento personalizado e eficaz.</p>
+    
+    <img src="https://img.freepik.com/fotos-gratis/tecnico-de-seguranca-instalando-camera-de-cftv-na-parede_23-2149341923.jpg" alt="Técnico instalando câmera de segurança">
+
+    <p>Hoje, somos referência em soluções como câmeras de monitoramento, sistemas de alarme, automação de portões, controle de acesso e muito mais. Continuamos evoluindo e acompanhando as novas tendências para garantir que nossos clientes estejam sempre protegidos.</p>
+    
+    <p>Na Omega Alarmes, segurança é mais do que um serviço — é um compromisso com a vida!</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Omega Alarmes. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("sideMenu");
+      menu.style.width = menu.style.width === "200px" ? "0" : "200px";
+    }
+  </script>
+
+</body>
+</html>
